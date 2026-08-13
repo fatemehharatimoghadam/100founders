@@ -1,6 +1,6 @@
 export const users = [
   {
-    id: "100-ceo-001",
+    id: "100-founder-001",
 
     phone: "09121234567",
 
@@ -10,7 +10,7 @@ export const users = [
 
     company: "Example Company",
 
-    position: "CEO",
+    position: "Founder",
 
     field: "سرمایه‌گذاری",
 
@@ -19,6 +19,6 @@ export const users = [
     telegram: "@ahmad",
 
     bio:
-      "مدیرعامل فعال در حوزه توسعه کسب‌وکار و سرمایه‌گذاری."
+      "بنیان‌گذار و مدیر فعال در حوزه توسعه کسب‌وکار و سرمایه‌گذاری.",
   },
 ];
