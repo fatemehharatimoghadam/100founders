@@ -94,12 +94,23 @@ export default function Footer() {
       className="
         relative
         overflow-hidden
-        bg-dark
+        bg-footer
         text-white
       "
     >
       {/* Top Accent */}
-      <div className="h-px w-full bg-gold/50" />
+      <div
+        aria-hidden="true"
+        className="
+          h-px
+          w-full
+          bg-gradient-to-r
+          from-transparent
+          via-gold/60
+          to-transparent
+        "
+      />
+
 
       {/* Decorative Background */}
       <div
@@ -112,7 +123,7 @@ export default function Footer() {
           h-[400px]
           w-[400px]
           rounded-full
-          bg-primary/20
+          bg-primary/15
           blur-3xl
         "
       />
@@ -132,6 +143,22 @@ export default function Footer() {
         "
       />
 
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          bottom-[-120px]
+          right-[35%]
+          h-[300px]
+          w-[300px]
+          rounded-full
+          bg-soft/5
+          blur-3xl
+        "
+      />
+
+
       {/* Main Content */}
       <div
         className="
@@ -139,8 +166,8 @@ export default function Footer() {
           mx-auto
           max-w-7xl
           px-6
-          py-12
-          md:py-14
+          py-14
+          md:py-16
         "
       >
         <div
@@ -148,7 +175,7 @@ export default function Footer() {
             grid
             gap-10
             md:grid-cols-2
-            lg:grid-cols-[1.1fr_0.8fr_0.8fr_1fr]
+            lg:grid-cols-[1.15fr_0.8fr_0.8fr_1fr]
             lg:items-start
           "
         >
@@ -158,11 +185,13 @@ export default function Footer() {
               href="/"
               aria-label="صفحه اصلی 100Founders"
               className="
+                group
                 inline-flex
                 rounded-2xl
                 outline-none
-                transition-transform
+                transition-all
                 duration-300
+                hover:-translate-y-1
                 hover:scale-[1.03]
                 focus-visible:ring-2
                 focus-visible:ring-gold/50
@@ -170,19 +199,39 @@ export default function Footer() {
             >
               <div
                 className="
+                  relative
                   flex
                   h-20
                   w-20
                   items-center
                   justify-center
+                  overflow-hidden
                   rounded-2xl
+                  border
+                  border-white/10
                   bg-white
                   p-3
-                  shadow-xl
+                  shadow-[0_14px_35px_rgba(0,0,0,0.20)]
                 "
               >
+                <span
+                  aria-hidden="true"
+                  className="
+                    absolute
+                    inset-x-0
+                    top-0
+                    h-[2px]
+                    origin-right
+                    scale-x-0
+                    bg-gold
+                    transition-transform
+                    duration-300
+                    group-hover:scale-x-100
+                  "
+                />
+
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.jpg"
                   alt="100Founders"
                   width={80}
                   height={80}
@@ -194,6 +243,7 @@ export default function Footer() {
                 />
               </div>
             </Link>
+
 
             <h2
               dir="ltr"
@@ -211,6 +261,7 @@ export default function Footer() {
               </span>
             </h2>
 
+
             <p
               className="
                 mt-3
@@ -220,9 +271,11 @@ export default function Footer() {
                 text-white/60
               "
             >
-              شبکه‌ای برای ارتباط میان بنیان‌گذاران، مدیران و رهبران
-              کسب‌وکار؛ بستری برای انتقال تجربه، همکاری و رشد مشترک.
+              شبکه‌ای برای ارتباط میان بنیان‌گذاران، کارآفرینان و
+              رهبران کسب‌وکار؛ بستری برای انتقال تجربه، شکل‌گیری
+              همکاری‌های ارزشمند و رشد مشترک.
             </p>
+
 
             {/* Social */}
             <div className="mt-5 flex flex-wrap gap-3">
@@ -240,6 +293,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
+
 
           {/* Footer Link Columns */}
           {footerLinks.map((column) => (
@@ -267,6 +321,7 @@ export default function Footer() {
               </nav>
             </div>
           ))}
+
 
           {/* Contact */}
           <div>
@@ -307,8 +362,15 @@ export default function Footer() {
         </div>
       </div>
 
+
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div
+        className="
+          border-t
+          border-white/10
+          bg-black/5
+        "
+      >
         <div
           className="
             mx-auto
@@ -345,8 +407,9 @@ export default function Footer() {
             <Link
               href="/privacy"
               className="
-                transition-colors
+                transition-all
                 duration-300
+                hover:-translate-y-px
                 hover:text-gold
               "
             >
@@ -358,8 +421,9 @@ export default function Footer() {
             <Link
               href="/terms"
               className="
-                transition-colors
+                transition-all
                 duration-300
+                hover:-translate-y-px
                 hover:text-gold
               "
             >
@@ -394,8 +458,9 @@ function FooterHeading({
         aria-hidden="true"
         className="
           mt-2
-          h-px
+          h-[2px]
           w-10
+          rounded-full
           bg-gold
         "
       />
@@ -422,9 +487,11 @@ function FooterLink({
         gap-2
         text-sm
         text-white/65
+
         transition-all
         duration-300
-        hover:translate-x-[-2px]
+
+        hover:-translate-x-1
         hover:text-white
       "
     >
@@ -468,18 +535,27 @@ function SocialIcon({
         w-10
         items-center
         justify-center
+
         rounded-full
+
         border
-        border-gold/40
+        border-gold/35
+
+        bg-white/[0.02]
+
         text-white/70
+
         outline-none
+
         transition-all
         duration-300
+
         hover:-translate-y-1
         hover:scale-110
         hover:border-gold
-        hover:bg-gold/10
-        hover:text-gold
+        hover:bg-gold
+        hover:text-footer
+
         focus-visible:ring-2
         focus-visible:ring-gold/50
       "
@@ -514,14 +590,20 @@ function ContactItem({
         w-fit
         items-center
         gap-3
+
         rounded-lg
+
         outline-none
+
         transition-all
         duration-300
+
+        hover:-translate-y-0.5
+
         focus-visible:ring-2
         focus-visible:ring-gold/40
         focus-visible:ring-offset-4
-        focus-visible:ring-offset-dark
+        focus-visible:ring-offset-footer
       "
     >
       <div
@@ -532,15 +614,22 @@ function ContactItem({
           shrink-0
           items-center
           justify-center
+
           rounded-full
+
           border
-          border-gold/40
+          border-gold/35
+
+          bg-gold/5
           text-gold
+
           transition-all
           duration-300
+
           group-hover:scale-110
           group-hover:border-gold
-          group-hover:bg-gold/10
+          group-hover:bg-gold
+          group-hover:text-footer
         "
       >
         {icon}
@@ -557,8 +646,10 @@ function ContactItem({
             mt-1
             text-sm
             text-white/80
+
             transition-colors
             duration-300
+
             group-hover:text-gold
           "
         >
