@@ -6,11 +6,7 @@ import {
   Headphones,
   Instagram,
   Mail,
-  MessageSquareText,
-  PenLine,
   Phone,
-  Send,
-  User,
 } from "lucide-react";
 
 import Footer from "@/components/layout/Footer";
@@ -48,20 +44,17 @@ export default function ContactPage() {
           bg-light
         "
       >
-        {/* ========================================
-            HERO / CONTACT AREA
-        ======================================== */}
         <section
           className="
             relative
             overflow-hidden
             px-6
-            py-16
-            md:py-20
-            lg:py-24
+            py-20
+            md:py-24
+            lg:py-28
           "
         >
-          {/* Decorative dots */}
+          {/* Decorative Dots */}
           <div
             aria-hidden="true"
             className="
@@ -77,18 +70,35 @@ export default function ContactPage() {
             "
           />
 
+          {/* Decorative Circle */}
           <div
             aria-hidden="true"
             className="
               pointer-events-none
               absolute
-              bottom-10
-              left-0
-              h-56
-              w-56
+              -left-20
+              bottom-[-80px]
+              h-72
+              w-72
               rounded-full
               border
               border-dark/5
+            "
+          />
+
+          {/* Glow */}
+          <div
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute
+              -right-36
+              top-[30%]
+              h-[360px]
+              w-[360px]
+              rounded-full
+              bg-soft/20
+              blur-3xl
             "
           />
 
@@ -96,25 +106,22 @@ export default function ContactPage() {
             className="
               relative
               mx-auto
-              grid
               max-w-7xl
-              gap-12
-              lg:grid-cols-[0.8fr_1.2fr]
-              lg:gap-16
             "
           >
-            {/* CONTACT INFO */}
+            {/* Header */}
             <div
               className="
-                flex
-                flex-col
-                justify-center
+                mx-auto
+                max-w-3xl
+                text-center
               "
             >
               <div
                 className="
                   flex
                   items-center
+                  justify-center
                   gap-3
                 "
               >
@@ -134,18 +141,22 @@ export default function ContactPage() {
                 >
                   CONTACT 100FOUNDERS
                 </p>
+
+                <span
+                  aria-hidden="true"
+                  className="h-px w-9 bg-gold"
+                />
               </div>
 
               <h1
                 className="
                   mt-5
-                  max-w-md
                   text-4xl
                   font-black
                   leading-[1.5]
                   text-dark
                   md:text-5xl
-                  lg:text-[56px]
+                  lg:text-[58px]
                 "
               >
                 با ما در{" "}
@@ -157,492 +168,414 @@ export default function ContactPage() {
 
               <p
                 className="
+                  mx-auto
                   mt-6
-                  max-w-md
+                  max-w-2xl
                   text-base
                   leading-8
                   text-gray
+                  md:text-[17px]
                 "
               >
-                برای دریافت اطلاعات بیشتر، همکاری یا هرگونه سؤال،
-                می‌توانید از طریق راه‌های ارتباطی زیر با ما در تماس باشید.
-                تیم ما در سریع‌ترین زمان پاسخ‌گوی شما خواهد بود.
+                برای دریافت اطلاعات بیشتر درباره عضویت، همکاری‌ها،
+                رویدادها و ارتباط با تیم 100Founders می‌توانید از
+                راه‌های ارتباطی زیر استفاده کنید.
               </p>
 
-
-              {/* Contact list */}
-              <div className="mt-8 space-y-1">
-                {contactItems.map((item) => {
-                  const Icon = item.icon;
-                  const isExternal = item.href.startsWith("http");
-
-                  return (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      target={isExternal ? "_blank" : undefined}
-                      rel={isExternal ? "noopener noreferrer" : undefined}
-                      className="
-                        group
-                        flex
-                        items-center
-                        justify-between
-                        gap-5
-                        border-b
-                        border-dark/10
-                        py-5
-                        transition-all
-                        duration-300
-                        hover:border-gold/40
-                      "
-                    >
-                      <div>
-                        <p
-                          className="
-                            text-sm
-                            font-bold
-                            text-dark
-                          "
-                        >
-                          {item.label}
-                        </p>
-
-                        <p
-                          dir="ltr"
-                          className="
-                            mt-1
-                            text-base
-                            font-medium
-                            text-dark
-                            transition-colors
-                            duration-300
-                            group-hover:text-primary
-                          "
-                        >
-                          {item.value}
-                        </p>
-                      </div>
-
-                      <div
-                        className="
-                          flex
-                          h-12
-                          w-12
-                          shrink-0
-                          items-center
-                          justify-center
-                          rounded-xl
-                          bg-dark
-                          text-gold
-                          shadow-[0_8px_20px_rgba(21,59,68,0.14)]
-                          transition-all
-                          duration-300
-                          group-hover:-translate-y-1
-                          group-hover:scale-105
-                          group-hover:bg-gold
-                          group-hover:text-dark
-                        "
-                      >
-                        <Icon
-                          aria-hidden="true"
-                          size={21}
-                        />
-                      </div>
-                    </a>
-                  );
-                })}
-              </div>
-
-
-              {/* Availability */}
               <div
+                aria-hidden="true"
                 className="
-                  mt-5
-                  flex
-                  items-center
-                  gap-2
-                  text-xs
-                  text-gray
+                  mx-auto
+                  mt-7
+                  h-[3px]
+                  w-14
+                  rounded-full
+                  bg-gold
                 "
-              >
-                <Clock3
-                  aria-hidden="true"
-                  size={15}
-                  className="text-gray"
-                />
-
-                شنبه تا چهارشنبه: ۹ صبح تا ۶ عصر
-              </div>
-
-
-              {/* Chat CTA */}
-              <Link
-                href="/contact"
-                className="
-                  group
-                  mt-6
-                  inline-flex
-                  h-12
-                  w-full
-                  max-w-sm
-                  items-center
-                  justify-center
-                  gap-3
-                  rounded-xl
-                  bg-dark
-                  px-6
-                  text-sm
-                  font-bold
-                  text-white
-                  shadow-[0_8px_24px_rgba(21,59,68,0.16)]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-[2px]
-                  hover:bg-footer
-                  hover:shadow-[0_12px_30px_rgba(21,59,68,0.22)]
-                "
-              >
-                <Headphones
-                  aria-hidden="true"
-                  size={18}
-                  className="text-gold"
-                />
-
-                گفت‌وگوی آنلاین
-
-                <ArrowLeft
-                  aria-hidden="true"
-                  size={16}
-                  className="
-                    transition-transform
-                    duration-300
-                    group-hover:-translate-x-1
-                  "
-                />
-              </Link>
+              />
             </div>
 
 
-            {/* FORM */}
+            {/* Contact Cards */}
             <div
               className="
-                rounded-[30px]
-                border
-                border-dark/5
-                bg-white
-                p-6
-                shadow-[0_18px_50px_rgba(21,59,68,0.08)]
-                md:p-8
-                lg:p-10
+                mt-14
+                grid
+                gap-6
+                md:grid-cols-3
               "
             >
-              <div className="text-center">
-                <h2
-                  className="
-                    text-2xl
-                    font-black
-                    text-dark
-                    md:text-3xl
-                  "
-                >
-                  ارسال پیام
-                </h2>
+              {contactItems.map((item) => {
+                const Icon = item.icon;
+                const isExternal = item.href.startsWith("http");
 
-                <div
-                  aria-hidden="true"
-                  className="
-                    mx-auto
-                    mt-4
-                    h-[2px]
-                    w-12
-                    rounded-full
-                    bg-gold
-                  "
-                />
-              </div>
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="
+                      group
+                      relative
+                      overflow-hidden
+                      rounded-[28px]
+                      border
+                      border-dark/5
+                      bg-white
+                      p-8
+                      text-center
+
+                      shadow-[0_10px_32px_rgba(21,59,68,0.05)]
+
+                      transition-all
+                      duration-500
+                      ease-out
+
+                      hover:-translate-y-2
+                      hover:border-gold/35
+                      hover:shadow-[0_18px_42px_rgba(21,59,68,0.10)]
+                    "
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="
+                        absolute
+                        inset-x-0
+                        top-0
+                        h-[3px]
+                        origin-right
+                        scale-x-0
+                        bg-gold
+                        transition-transform
+                        duration-500
+                        group-hover:scale-x-100
+                      "
+                    />
+
+                    <div
+                      className="
+                        mx-auto
+                        flex
+                        h-16
+                        w-16
+                        items-center
+                        justify-center
+                        rounded-2xl
+                        bg-dark
+                        text-gold
+
+                        shadow-[0_8px_22px_rgba(21,59,68,0.14)]
+
+                        transition-all
+                        duration-500
+
+                        group-hover:-translate-y-1
+                        group-hover:scale-110
+                        group-hover:bg-gold
+                        group-hover:text-dark
+                      "
+                    >
+                      <Icon
+                        aria-hidden="true"
+                        size={27}
+                      />
+                    </div>
+
+                    <h2
+                      className="
+                        mt-6
+                        text-lg
+                        font-extrabold
+                        text-dark
+                      "
+                    >
+                      {item.label}
+                    </h2>
+
+                    <p
+                      dir="ltr"
+                      className="
+                        mt-3
+                        text-base
+                        font-medium
+                        text-gray
+
+                        transition-colors
+                        duration-300
+
+                        group-hover:text-primary
+                      "
+                    >
+                      {item.value}
+                    </p>
+
+                    <div
+                      className="
+                        mt-5
+                        flex
+                        items-center
+                        justify-center
+                        gap-2
+                        text-xs
+                        font-bold
+                        text-primary/0
+
+                        transition-all
+                        duration-500
+
+                        group-hover:text-primary
+                      "
+                    >
+                      مشاهده / ارتباط
+
+                      <ArrowLeft
+                        aria-hidden="true"
+                        size={14}
+                        className="
+                          translate-x-2
+                          opacity-0
+                          transition-all
+                          duration-500
+                          group-hover:translate-x-0
+                          group-hover:opacity-100
+                        "
+                      />
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
 
 
-              <form
+            {/* Support Panel */}
+            <div
+              className="
+                relative
+                mt-12
+                overflow-hidden
+                rounded-[32px]
+                bg-dark
+                px-7
+                py-8
+                text-white
+
+                shadow-[0_18px_50px_rgba(21,59,68,0.14)]
+
+                md:px-10
+                md:py-10
+              "
+            >
+              {/* Glow */}
+              <div
+                aria-hidden="true"
                 className="
-                  mt-8
-                  grid
-                  gap-5
-                  md:grid-cols-2
+                  pointer-events-none
+                  absolute
+                  -right-28
+                  -top-28
+                  h-72
+                  w-72
+                  rounded-full
+                  bg-gold/10
+                  blur-3xl
+                "
+              />
+
+              <div
+                aria-hidden="true"
+                className="
+                  pointer-events-none
+                  absolute
+                  -bottom-32
+                  left-[15%]
+                  h-72
+                  w-72
+                  rounded-full
+                  bg-primary/20
+                  blur-3xl
+                "
+              />
+
+              <div
+                className="
+                  relative
+                  z-10
+                  flex
+                  flex-col
+                  items-center
+                  gap-8
+                  text-center
+
+                  md:flex-row
+                  md:justify-between
+                  md:text-right
                 "
               >
-                {/* Name */}
                 <div>
-                  <label
-                    htmlFor="name"
+                  <div
                     className="
-                      mb-2
-                      block
-                      text-sm
-                      font-bold
-                      text-dark
+                      flex
+                      items-center
+                      justify-center
+                      gap-3
+                      md:justify-start
                     "
                   >
-                    نام و نام خانوادگی
-                  </label>
-
-                  <div className="relative">
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="نام خود را وارد کنید"
-                      className="
-                        input
-                        input-bordered
-                        h-12
-                        w-full
-                        rounded-xl
-                        border-border
-                        bg-white
-                        pe-11
-                        text-dark
-                        transition-all
-                        duration-300
-                        focus:border-primary
-                        focus:outline-none
-                        focus:ring-2
-                        focus:ring-primary/10
-                      "
-                    />
-
-                    <User
+                    <Headphones
                       aria-hidden="true"
-                      size={17}
-                      className="
-                        absolute
-                        left-4
-                        top-1/2
-                        -translate-y-1/2
-                        text-gray
-                      "
-                    />
-                  </div>
-                </div>
-
-
-                {/* Email */}
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="
-                      mb-2
-                      block
-                      text-sm
-                      font-bold
-                      text-dark
-                    "
-                  >
-                    ایمیل
-                  </label>
-
-                  <div className="relative">
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      dir="ltr"
-                      placeholder="example@gmail.com"
-                      className="
-                        input
-                        input-bordered
-                        h-12
-                        w-full
-                        rounded-xl
-                        border-border
-                        bg-white
-                        pe-11
-                        text-left
-                        text-dark
-                        transition-all
-                        duration-300
-                        focus:border-primary
-                        focus:outline-none
-                        focus:ring-2
-                        focus:ring-primary/10
-                      "
-                    />
-
-                    <Mail
-                      aria-hidden="true"
-                      size={17}
-                      className="
-                        absolute
-                        right-4
-                        top-1/2
-                        -translate-y-1/2
-                        text-gray
-                      "
-                    />
-                  </div>
-                </div>
-
-
-                {/* Subject */}
-                <div className="md:col-span-2">
-                  <label
-                    htmlFor="subject"
-                    className="
-                      mb-2
-                      block
-                      text-sm
-                      font-bold
-                      text-dark
-                    "
-                  >
-                    موضوع
-                  </label>
-
-                  <div className="relative">
-                    <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      placeholder="موضوع پیام خود را وارد کنید"
-                      className="
-                        input
-                        input-bordered
-                        h-12
-                        w-full
-                        rounded-xl
-                        border-border
-                        bg-white
-                        pe-11
-                        text-dark
-                        transition-all
-                        duration-300
-                        focus:border-primary
-                        focus:outline-none
-                        focus:ring-2
-                        focus:ring-primary/10
-                      "
-                    />
-
-                    <MessageSquareText
-                      aria-hidden="true"
-                      size={17}
-                      className="
-                        absolute
-                        left-4
-                        top-1/2
-                        -translate-y-1/2
-                        text-gray
-                      "
-                    />
-                  </div>
-                </div>
-
-
-                {/* Message */}
-                <div className="md:col-span-2">
-                  <label
-                    htmlFor="message"
-                    className="
-                      mb-2
-                      block
-                      text-sm
-                      font-bold
-                      text-dark
-                    "
-                  >
-                    پیام شما
-                  </label>
-
-                  <div className="relative">
-                    <textarea
-                      id="message"
-                      name="message"
-                      placeholder="پیام خود را بنویسید..."
-                      className="
-                        textarea
-                        textarea-bordered
-                        min-h-40
-                        w-full
-                        resize-none
-                        rounded-xl
-                        border-border
-                        bg-white
-                        pe-11
-                        text-dark
-                        transition-all
-                        duration-300
-                        focus:border-primary
-                        focus:outline-none
-                        focus:ring-2
-                        focus:ring-primary/10
-                      "
-                    />
-
-                    <PenLine
-                      aria-hidden="true"
-                      size={17}
-                      className="
-                        absolute
-                        left-4
-                        top-4
-                        text-gray
-                      "
-                    />
-                  </div>
-                </div>
-
-
-                {/* Submit */}
-                <div
-                  className="
-                    md:col-span-2
-                    flex
-                    justify-end
-                  "
-                >
-                  <button
-                    type="submit"
-                    className="
-                      btn
-                      group
-                      h-12
-                      min-h-12
-                      min-w-[190px]
-                      rounded-xl
-                      border-0
-                      bg-dark
-                      px-7
-                      text-sm
-                      font-bold
-                      text-white
-                      shadow-[0_8px_22px_rgba(21,59,68,0.16)]
-                      transition-all
-                      duration-300
-                      hover:-translate-y-[2px]
-                      hover:bg-footer
-                      hover:text-white
-                      hover:shadow-[0_12px_28px_rgba(21,59,68,0.24)]
-                    "
-                  >
-                    <Send
-                      aria-hidden="true"
-                      size={17}
+                      size={20}
                       className="text-gold"
                     />
 
-                    ارسال پیام
+                    <p
+                      className="
+                        text-sm
+                        font-bold
+                        text-gold
+                      "
+                    >
+                      ارتباط مستقیم با تیم
+                    </p>
+                  </div>
+
+                  <h2
+                    className="
+                      mt-4
+                      text-2xl
+                      font-extrabold
+                      leading-9
+                      md:text-3xl
+                    "
+                  >
+                    پاسخ‌گوی شما هستیم
+                  </h2>
+
+                  <p
+                    className="
+                      mt-3
+                      max-w-xl
+                      text-sm
+                      leading-7
+                      text-white/60
+                      md:text-base
+                    "
+                  >
+                    برای پرسش‌های مربوط به عضویت، دعوت‌نامه، رویدادها
+                    یا همکاری با 100Founders، از طریق راه‌های ارتباطی
+                    بالا با تیم ما در تماس باشید.
+                  </p>
+                </div>
+
+                <div
+                  className="
+                    flex
+                    shrink-0
+                    flex-col
+                    items-center
+                    gap-4
+                    md:items-end
+                  "
+                >
+                  <div
+                    className="
+                      flex
+                      items-center
+                      gap-2
+                      text-sm
+                      text-white/60
+                    "
+                  >
+                    <Clock3
+                      aria-hidden="true"
+                      size={16}
+                      className="text-gold"
+                    />
+
+                    شنبه تا چهارشنبه
+                  </div>
+
+                  <div
+                    className="
+                      text-sm
+                      font-bold
+                      text-white
+                    "
+                  >
+                    ۹ صبح تا ۶ عصر
+                  </div>
+
+                  <a
+                    href="tel:02191035274"
+                    className="
+                      group
+                      inline-flex
+                      h-12
+                      min-w-[190px]
+                      items-center
+                      justify-center
+                      gap-3
+                      rounded-xl
+                      bg-gold
+                      px-7
+                      text-sm
+                      font-bold
+                      text-dark
+
+                      shadow-[0_8px_24px_rgba(209,160,84,0.18)]
+
+                      transition-all
+                      duration-300
+
+                      hover:-translate-y-[2px]
+                      hover:bg-gold/90
+                      hover:text-dark
+                      hover:shadow-[0_12px_30px_rgba(209,160,84,0.28)]
+                    "
+                  >
+                    تماس با تیم
 
                     <ArrowLeft
                       aria-hidden="true"
-                      size={16}
+                      size={17}
                       className="
                         transition-transform
                         duration-300
                         group-hover:-translate-x-1
                       "
                     />
-                  </button>
+                  </a>
                 </div>
-              </form>
+              </div>
+            </div>
+
+
+            {/* Back Home */}
+            <div className="mt-9 text-center">
+              <Link
+                href="/"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  text-sm
+                  font-bold
+                  text-primary
+
+                  transition-all
+                  duration-300
+
+                  hover:-translate-x-1
+                  hover:text-dark
+                "
+              >
+                بازگشت به صفحه اصلی
+
+                <ArrowLeft
+                  aria-hidden="true"
+                  size={16}
+                />
+              </Link>
             </div>
           </div>
         </section>
