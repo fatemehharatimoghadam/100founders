@@ -11,6 +11,9 @@
   --color-gray: rgb(102, 122, 126);
   --color-gold: rgb(209, 160, 84);
 
+  /* Section Colors */
+  --color-footer: rgb(15, 43, 49);
+
   /* Base Colors */
   --color-background: rgb(255, 255, 255);
   --color-foreground: rgb(61, 61, 61);
@@ -28,6 +31,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-vazir), sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 * {
