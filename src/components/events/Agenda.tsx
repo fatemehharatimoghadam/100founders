@@ -1,178 +1,239 @@
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Clock3,
+} from "lucide-react";
+
+
 const agenda = [
   {
     time: "18:00",
     title: "پذیرش مهمانان",
     description:
-      "ورود مدیران و مهمانان ویژه و آغاز فرآیند پذیرش.",
+      "ورود مهمانان، پذیرش و آغاز ارتباط‌های اولیه میان اعضای شبکه.",
   },
-
   {
     time: "18:30",
     title: "افتتاحیه",
     description:
-      "شروع رسمی برنامه و معرفی اهداف گردهمایی.",
+      "معرفی 100Founders، اهداف رویداد و مسیر پیش‌روی شبکه.",
   },
-
   {
     time: "19:00",
     title: "سخنرانی‌ها",
     description:
-      "ارائه دیدگاه‌ها و تجربه‌های مدیریتی توسط سخنرانان.",
+      "ارائه تجربه‌ها و دیدگاه‌های مدیریتی توسط مهمانان رویداد.",
   },
-
   {
     time: "20:30",
-    title: "جلسه شبکه‌سازی",
+    title: "شبکه‌سازی",
     description:
-      "ارتباط مستقیم مدیران و ایجاد فرصت‌های همکاری.",
+      "گفت‌وگوی مستقیم اعضا و ایجاد زمینه‌های همکاری و ارتباط حرفه‌ای.",
   },
-
   {
     time: "22:00",
     title: "اختتامیه",
     description:
-      "پایان برنامه و جمع‌بندی رویداد.",
+      "جمع‌بندی رویداد و پایان رسمی اولین گردهمایی.",
   },
 ];
 
 
 export default function Agenda() {
-
   return (
-
     <section
+      id="agenda"
       className="
-      py-24
-      px-6
-      bg-[rgb(243,239,232)]
+        bg-light
+        px-6
+        py-24
+        md:py-28
       "
     >
-
-      <div
-        className="
-        max-w-5xl
-        mx-auto
-        "
-      >
-
-
-        <div
-          className="
-          text-center
-          mb-14
-          "
-        >
-
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center">
           <p
+            dir="ltr"
             className="
-            text-[rgb(51,102,89)]
-            font-medium
-            tracking-widest
+              text-xs
+              font-bold
+              tracking-[0.16em]
+              text-primary
             "
           >
-            AGENDA
+            EVENT AGENDA
           </p>
-
 
           <h2
             className="
-            mt-4
-            text-4xl
-            md:text-5xl
-            font-bold
-            text-[rgb(31,73,61)]
+              mt-4
+              text-3xl
+              font-black
+              text-dark
+              md:text-5xl
             "
           >
-            برنامه رویداد
+            برنامه زمانی رویداد
           </h2>
 
+          <p
+            className="
+              mx-auto
+              mt-5
+              max-w-xl
+              text-sm
+              leading-8
+              text-gray
+            "
+          >
+            از پذیرش تا شبکه‌سازی؛ یک برنامه منظم برای
+            گفت‌وگو، یادگیری و ساخت ارتباط‌های تازه.
+          </p>
         </div>
-
 
 
         <div
           className="
-          space-y-6
+            relative
+            mt-14
+            space-y-5
           "
         >
+          <div
+            aria-hidden="true"
+            className="
+              absolute
+              bottom-10
+              right-[31px]
+              top-10
+              hidden
+              w-px
+              bg-gold/25
+              sm:block
+            "
+          />
 
-          {
-            agenda.map((item,index)=>(
-
-              <div
-                key={index}
-                className="
+          {agenda.map((item, index) => (
+            <div
+              key={item.time}
+              className="
+                group
+                relative
                 flex
-                gap-6
+                gap-5
+                rounded-[26px]
+                border
+                border-dark/5
                 bg-white
-                rounded-3xl
-                p-6
-                shadow-sm
-                "
-              >
-
-
-                <div
-                  className="
-                  min-w-24
-                  h-20
-                  rounded-2xl
-                  bg-[rgb(31,73,61)]
-                  text-white
+                p-5
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:border-gold/25
+                hover:shadow-lg
+                sm:p-6
+              "
+            >
+              <div
+                className="
+                  relative
+                  z-10
                   flex
+                  h-16
+                  w-16
+                  shrink-0
                   items-center
                   justify-center
-                  font-bold
-                  text-lg
+                  rounded-2xl
+                  bg-dark
+                  text-gold
+                "
+              >
+                <Clock3 size={19} />
+              </div>
+
+
+              <div className="flex-1">
+                <div
+                  className="
+                    flex
+                    flex-col
+                    gap-2
+                    sm:flex-row
+                    sm:items-center
+                    sm:justify-between
                   "
-                  dir="ltr"
                 >
-                  {item.time}
-                </div>
-
-
-
-                <div>
-
                   <h3
                     className="
-                    text-xl
-                    font-bold
-                    text-[rgb(31,73,61)]
+                      text-lg
+                      font-black
+                      text-dark
+                      md:text-xl
                     "
                   >
                     {item.title}
                   </h3>
 
-
-                  <p
+                  <span
+                    dir="ltr"
                     className="
-                    mt-2
-                    text-gray-600
-                    leading-8
+                      w-fit
+                      rounded-full
+                      bg-light
+                      px-3
+                      py-1
+                      text-xs
+                      font-bold
+                      text-primary
                     "
                   >
-                    {item.description}
-                  </p>
-
-
+                    {item.time}
+                  </span>
                 </div>
 
-
+                <p
+                  className="
+                    mt-3
+                    text-sm
+                    leading-7
+                    text-gray
+                  "
+                >
+                  {item.description}
+                </p>
               </div>
 
-            ))
-          }
 
-
+              <div
+                className="
+                  hidden
+                  items-center
+                  sm:flex
+                "
+              >
+                {index === agenda.length - 1 ? (
+                  <CheckCircle2
+                    size={19}
+                    className="text-gold"
+                  />
+                ) : (
+                  <ArrowLeft
+                    size={17}
+                    className="
+                      text-gray/30
+                      transition-transform
+                      duration-300
+                      group-hover:-translate-x-1
+                      group-hover:text-gold
+                    "
+                  />
+                )}
+              </div>
+            </div>
+          ))}
         </div>
-
-
       </div>
-
-
     </section>
-
   );
-
 }

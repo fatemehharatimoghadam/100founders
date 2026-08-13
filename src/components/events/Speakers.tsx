@@ -1,11 +1,21 @@
+import {
+  ArrowUpLeft,
+  Mic2,
+} from "lucide-react";
+
+
 const speakers = [
   {
     name: "آقای رستمی",
-    bio: "توضیحات کوتاه درباره سوابق، تجربه و حوزه فعالیت سخنران.",
+    role: "بنیان‌گذار و مدیر کسب‌وکار",
+    bio:
+      "ارائه تجربه‌های مدیریتی و دیدگاه‌های عملی درباره توسعه کسب‌وکار و ساخت شبکه‌های حرفه‌ای.",
   },
   {
     name: "آقای جعفری",
-    bio: "توضیحات کوتاه درباره سوابق، تجربه و حوزه فعالیت سخنران.",
+    role: "کارآفرین و فعال اقتصادی",
+    bio:
+      "گفت‌وگو درباره فرصت‌های همکاری، توسعه بازار و نقش ارتباطات حرفه‌ای در رشد سازمان‌ها.",
   },
 ];
 
@@ -14,123 +24,185 @@ export default function Speakers() {
   return (
     <section
       className="
-      py-24
-      px-6
-      bg-white
+        bg-white
+        px-6
+        py-24
+        md:py-28
       "
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="mx-auto max-w-7xl">
+        <div
+          className="
+            flex
+            flex-col
+            gap-6
+            md:flex-row
+            md:items-end
+            md:justify-between
+          "
+        >
+          <div>
+            <p
+              dir="ltr"
+              className="
+                text-xs
+                font-bold
+                tracking-[0.16em]
+                text-primary
+              "
+            >
+              SPEAKERS
+            </p>
 
-        <div className="text-center mb-14">
+            <h2
+              className="
+                mt-4
+                text-3xl
+                font-black
+                text-dark
+                md:text-5xl
+              "
+            >
+              مهمانان و سخنرانان
+            </h2>
+          </div>
 
           <p
             className="
-            text-[rgb(51,102,89)]
-            font-medium
-            tracking-widest
+              max-w-lg
+              text-sm
+              leading-8
+              text-gray
             "
           >
-            SPEAKERS
+            تجربه‌ها و دیدگاه‌های واقعی از افرادی که مسیر
+            کسب‌وکار را از نزدیک ساخته‌اند.
           </p>
-
-          <h2
-            className="
-            mt-4
-            text-4xl
-            md:text-5xl
-            font-bold
-            text-[rgb(31,73,61)]
-            "
-          >
-            سخنرانان این دوره
-          </h2>
-
-          <p
-            className="
-            mt-4
-            text-[#6B6B6B]
-            "
-          >
-            معرفی مهمانان و سخنرانان این گردهمایی
-          </p>
-
         </div>
 
 
         <div
           className="
-          grid
-          grid-cols-1
-          md:grid-cols-2
-          gap-8
+            mt-12
+            grid
+            gap-6
+            md:grid-cols-2
           "
         >
-
-          {speakers.map((speaker) => (
-
+          {speakers.map((speaker, index) => (
             <article
               key={speaker.name}
               className="
-              bg-[rgb(243,239,232)]
-              rounded-3xl
-              overflow-hidden
-              border
-              border-[#E7E0D7]
-              hover:-translate-y-1
-              hover:shadow-xl
-              transition-all
-              duration-300
+                group
+                relative
+                overflow-hidden
+                rounded-[30px]
+                border
+                border-dark/5
+                bg-light
+                p-7
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:border-gold/30
+                hover:shadow-[0_18px_45px_rgba(21,59,68,0.08)]
               "
             >
+              <div
+                className="
+                  flex
+                  items-start
+                  justify-between
+                "
+              >
+                <div
+                  className="
+                    flex
+                    h-20
+                    w-20
+                    items-center
+                    justify-center
+                    rounded-[22px]
+                    bg-dark
+                    text-2xl
+                    font-black
+                    text-gold
+                  "
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-              {/* Temporary Image Placeholder */}
+                <ArrowUpLeft
+                  size={20}
+                  className="
+                    text-gray/30
+                    transition-all
+                    duration-300
+                    group-hover:-translate-x-1
+                    group-hover:-translate-y-1
+                    group-hover:text-gold
+                  "
+                />
+              </div>
+
 
               <div
                 className="
-                h-80
-                bg-[#E7E0D7]
-                flex
-                items-center
-                justify-center
-                text-[rgb(51,102,89)]
-                font-medium
+                  mt-8
+                  flex
+                  items-center
+                  gap-2
+                  text-primary
                 "
               >
-                تصویر سخنران
+                <Mic2 size={17} />
+
+                <span
+                  className="
+                    text-xs
+                    font-bold
+                  "
+                >
+                  سخنران رویداد
+                </span>
               </div>
 
 
-              <div className="p-8">
-
-                <h3
-                  className="
-                  text-2xl
-                  font-bold
-                  text-[rgb(31,73,61)]
-                  "
-                >
-                  {speaker.name}
-                </h3>
-
-
-                <p
-                  className="
+              <h3
+                className="
                   mt-4
+                  text-2xl
+                  font-black
+                  text-dark
+                "
+              >
+                {speaker.name}
+              </h3>
+
+              <p
+                className="
+                  mt-2
+                  text-sm
+                  font-bold
+                  text-gold
+                "
+              >
+                {speaker.role}
+              </p>
+
+              <p
+                className="
+                  mt-5
+                  text-sm
                   leading-8
-                  text-[#6B6B6B]
-                  "
-                >
-                  {speaker.bio}
-                </p>
-
-              </div>
-
+                  text-gray
+                "
+              >
+                {speaker.bio}
+              </p>
             </article>
-
           ))}
-
         </div>
-
       </div>
     </section>
   );

@@ -1,9 +1,13 @@
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+
 import EventHero from "@/components/events/EventHero";
 import Speakers from "@/components/events/Speakers";
 import Agenda from "@/components/events/Agenda";
 import Sponsors from "@/components/events/Sponsors";
 import Venue from "@/components/events/Venue";
 import EventCTA from "@/components/events/EventCTA";
+
 
 export default async function EventPage({
   params,
@@ -12,24 +16,32 @@ export default async function EventPage({
     slug: string;
   }>;
 }) {
-
   const { slug } = await params;
 
+  void slug;
+
   return (
-    <main>
+    <>
+      <Navbar />
 
-      <EventHero />
+      <main
+        dir="rtl"
+        className="pt-[72px]"
+      >
+        <EventHero />
 
-      <Speakers />
+        <Speakers />
 
-      <Agenda />
+        <Agenda />
 
-      <Sponsors />
+        <Sponsors />
 
-      <Venue />
+        <Venue />
 
-      <EventCTA />
+        <EventCTA />
+      </main>
 
-    </main>
+      <Footer />
+    </>
   );
 }
