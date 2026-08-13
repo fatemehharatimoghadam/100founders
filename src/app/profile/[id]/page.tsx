@@ -8,17 +8,9 @@ export default async function ProfilePage({
     id: string;
   }>;
 }) {
-
-
   const { id } = await params;
 
-
   return (
-
-    <ProfilePageClient
-      id={id}
-    />
-
+    <ProfilePageClient id={id} />
   );
-
 }
