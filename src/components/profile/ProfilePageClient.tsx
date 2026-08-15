@@ -23,6 +23,7 @@ import { users as defaultUsers } from "@/data/users";
 
 type User = {
   id: string;
+  image:string;
   phone: string;
   firstName: string;
   lastName: string;
@@ -348,6 +349,7 @@ export default function ProfilePageClient({
             "
           >
             <ProfileCard
+              image={user.image}
               name={`${user.firstName} ${user.lastName}`}
               position={user.position}
               company={user.company}

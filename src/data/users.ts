@@ -2,6 +2,8 @@ export const users = [
   {
     id: "100-founder-001",
 
+    image: "/images/users/ahmad.jpg",
+
     phone: "09121234567",
 
     firstName: "احمد",

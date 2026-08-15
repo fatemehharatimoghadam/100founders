@@ -69,9 +69,10 @@ export default function LoginForm() {
       return;
     }
 
-    localStorage.setItem("registerPhone", phone);
-
-    router.push("/register");
+    setError(
+      "حساب کاربری شما هنوز فعال نشده است. لطفاً با پشتیبانی تماس بگیرید."
+    );
+    
   }
 
 
